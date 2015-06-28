@@ -15,11 +15,12 @@
       </div>
     </div>
 
-    <div class="main">
+    <div class="main" ng-controller="HomeController">
       <div class="container">
 
-        <div class="email" ng-repeat="email in emails">
-          <span class="from"> </span> <span class="subject"> </span><span class="date"> </span>
+				<!-- NOTE:  you're using a foreach loop here so to access the correct properties, take a look at emails.json and you'll see that you use email.from for example where the email or "prop" is what you use to reference the object within emailServe -->
+        <div class="email" ng-repeat="email in emailServe">
+          <span class="from"> {{ email.from }}</span> <span class="subject">{{ email.subject }} </span><span class="date">{{ email.datetime | date }} </span>
         </div>
 
       </div>
