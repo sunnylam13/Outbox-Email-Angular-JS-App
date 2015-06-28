@@ -6,8 +6,9 @@
     <link href="css/main.css" rel="stylesheet" />
     <script src="js/vendor/angular.min.js"></script>
   </head>
-  <body>
+  <body ng-app="OutboxApp">
   	<!-- target:  http://s3.amazonaws.com/codecademy-content/projects/4/outbox-1/index.html -->
+  	<!-- https://s3.amazonaws.com/codecademy-content/courses/ltp4/emails-api/emails.json -->
     <div class="header">
       <div class="container">
         <img src="img/logo.svg" width="140" height="150">
@@ -31,6 +32,6 @@
     <script src="js/controllers/HomeController.js"></script>
 
     <!-- Services -->
-    
+    <script src="js/services/emails.js"></script>
   </body>
 </html>
