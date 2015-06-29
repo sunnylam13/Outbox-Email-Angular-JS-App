@@ -1,4 +1,5 @@
-var app = angular.module("OutboxApp",[]);
+// don't forget the ['ngRoute']... if you forget this you'll draw an error and a blank page
+var app = angular.module('OutboxApp', ['ngRoute']);
 
 ////////////////////////////////////////////
 ///// 		ROUTING
