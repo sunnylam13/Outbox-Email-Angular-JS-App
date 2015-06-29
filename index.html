@@ -1,27 +1,32 @@
 <!doctype html>
 <html>
   <head>
-      <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
-    <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
     <script src="js/vendor/angular.min.js"></script>
+    
+    <!-- You need to include this additional JavaScript file in order to add routing to your app because it does not come with the AngularJS library by default. -->
+    <script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
+    
   </head>
   <body ng-app="OutboxApp">
-  	<!-- target:  http://s3.amazonaws.com/codecademy-content/projects/4/outbox-1/index.html -->
-  	<!-- https://s3.amazonaws.com/codecademy-content/courses/ltp4/emails-api/emails.json -->
     <div class="header">
       <div class="container">
         <img src="img/logo.svg" width="140" height="150">
       </div>
     </div>
 
-    <div class="main" ng-controller="HomeController">
+    <div class="main">
       <div class="container">
 
-				<!-- NOTE:  you're using a foreach loop here so to access the correct properties, take a look at emails.json and you'll see that you use email.from for example where the email or "prop" is what you use to reference the object within emailServe -->
-        <div class="email" ng-repeat="email in emailServe">
-          <span class="from"> {{ email.from }}</span> <span class="subject">{{ email.subject }} </span><span class="date">{{ email.datetime | date }} </span>
-        </div>
+        <!-- ====================================
+        ROUTING VIEW 
+        ==================================== -->
+        <!-- KEY POINT:  In the view in the main section, add <div ng-view></div>...  You need to do this right after the div.header if one exists -->
+        <!-- When you visit /outbox, a view is constructed by injecting views/home.html into the <div ng-view></div> in index.html. -->
+        <!-- Likewise, when you click on an email, a view is constructed by injecting views/email.html into <div ng-view></div>. -->
+        <div ng-view></div>
+        <!-- ====================================== -->
 
       </div>
     </div>
@@ -31,6 +36,7 @@
 
     <!-- Controllers -->
     <script src="js/controllers/HomeController.js"></script>
+    <script src="js/controllers/EmailController.js"></script>
 
     <!-- Services -->
     <script src="js/services/emails.js"></script>

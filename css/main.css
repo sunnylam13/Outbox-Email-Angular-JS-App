@@ -44,11 +44,29 @@ body, html {
 }
 
 .email span {
+    color: #000;
     display: inline-block;
     margin: 0;
     overflow: hidden;
     position: relative;
     text-overflow: ellipsis;
+}
+
+a.back {
+    background: #ffbd1a;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: #fff;
+    display: block;
+    font-weight: bold;
+    margin: 0 0 20px;
+    padding: 14px 0;
+    text-align: center;
+    width: 200px;
+}
+
+a.back:hover {
+    background: #f7a500;
+    text-decoration: none;
 }
 
 .from {
@@ -59,7 +77,7 @@ body, html {
 }
 
 .subject {
-    width: 65%;
+    width: 60%;
 }
 
 .date {
@@ -68,6 +86,36 @@ body, html {
     text-align: right;
     text-overflow: ellipsis;
     width: 15%;
+}
+
+.email-view {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 50px;
+}
+
+.email-view h2 {
+    font-size: 40px;
+    padding: 0;
+    margin: 0 0 10px;
+}
+
+.email-view .from {
+    display: inline-block;
+    padding: 0;
+    width: 50%;
+}
+
+.email-view .date {
+    display: inline-block;
+    padding: 0;
+    text-align: right;
+    width: 50%;
+}
+
+.email-view p {
+    font-size: 24px;
+    margin: 30px 0 0;
 }
 
 .footer {
